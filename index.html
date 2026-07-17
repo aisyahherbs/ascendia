@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ascendia - Business Control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <strong>Ascendia</strong>
+            <span>Business Control</span>
+          </div>
+        </div>
+
+        <div class="login-box" id="loginBox">
+          <label for="loginIdInput">Login ID</label>
+          <input id="loginIdInput" type="text" autocomplete="username" autocapitalize="characters" spellcheck="false" placeholder="Masukkan Login ID" />
+          <label for="passwordInput">Sandi</label>
+          <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Masukkan sandi" />
+          <button class="primary" id="loginBtn">Masuk</button>
+          <p class="hint">Gunakan akun yang diberikan perusahaan.</p>
+        </div>
+
+        <nav class="nav" id="nav"></nav>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="roleLabel">Admin Pusat</p>
+            <h1 id="pageTitle">Dashboard Ascendia</h1>
+          </div>
+          <div class="session-card">
+            <span id="activeUser">Belum login</span>
+            <button class="ghost" id="exportDataBtn" title="Unduh backup data">Backup</button>
+            <button class="ghost" id="importDataBtn" title="Pulihkan data dari backup">Import</button>
+            <button class="ghost" id="resetDataBtn" title="Kembalikan data contoh">Reset Data</button>
+            <button class="ghost" id="logoutBtn" title="Keluar dari sesi">Keluar</button>
+            <input id="importDataInput" type="file" accept="application/json,.json" hidden />
+          </div>
+        </header>
+
+        <section class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Periode Tutup Buku</p>
+            <h2>Periode 1 tanggal 11, Periode 2 tanggal 27</h2>
+            <p>Perkembangan omset, bonus, struktur jaringan, placement, pembayaran via Stokis, dan pengumuman perusahaan dalam satu tempat.</p>
+            <div class="hero-stats" aria-label="Ringkasan sistem Ascendia">
+              <span><b>PV</b> Omset</span>
+              <span><b>BV</b> Bonus</span>
+              <span><b>RO</b> Repeat Order</span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Visual perkembangan jaringan">
+            <div class="signal s1"></div>
+            <div class="signal s2"></div>
+            <div class="signal s3"></div>
+            <div class="orbit o1"></div>
+            <div class="orbit o2"></div>
+            <div class="orbit o3"></div>
+            <div class="node center">Ascendia</div>
+            <div class="node n1">PV</div>
+            <div class="node n2">BV</div>
+            <div class="node n3">RO</div>
+          </div>
+        </section>
+
+        <section id="content"></section>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <dialog id="editDialog">
+      <form class="dialog-card" id="editForm">
+        <h3 id="dialogTitle">Edit Data</h3>
+        <div id="dialogFields" class="form-grid"></div>
+        <menu>
+          <button type="button" value="cancel" class="ghost" data-close-dialog>Batal</button>
+          <button type="submit" value="save" class="primary" id="saveDialogBtn">Simpan</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
